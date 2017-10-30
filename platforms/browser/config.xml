@@ -13,9 +13,9 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-     <icon density="xxxhdpi" src="platforms/browser/res/icon/android/icon_lampazos.png" />
+     <icon density="xxxhdpi" src="platforms/browser/www/res/icon/android/drawable-hdpi-icon.png" />
     <!-- Define app icon for each platform. -->
-    <icon src="icon_lampazos.png" />
+    <icon src="drawable-hdpi-icon.png" />
     <icon src="platforms/browser/res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="platforms/browser/res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="platforms/browser/res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
