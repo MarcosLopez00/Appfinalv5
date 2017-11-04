@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Lampazos de Naranjo</name>
+    <name>Lampazos de naranjo</name>
     <description>
-       Todos los derechos reservados
+        Hello World sample application that responds to the deviceready event.
     </description>
-    <author email="marcos.lopez@hotmail.com" href="">
-        TeamDeveloper
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />

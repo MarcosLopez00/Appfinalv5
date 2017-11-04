@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
 
 <head>
@@ -6,7 +26,17 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" href="OnsenUI-dist-2.5.3/css/onsenui.min.css">
     <link rel="stylesheet" href="OnsenUI-dist-2.5.3/css/onsen-css-components.css">
@@ -22,7 +52,7 @@
 <ons-splitter>
   <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
     <ons-page>
-      <img src="imagen/encabezado.jpg" alt="" width="100%"/> 
+      <img src="imagen/HeaderLampazos.jpg" alt="" width="100%"/> 
       <ons-list-title>Menu</ons-list-title>
         <ons-list>
         
@@ -34,31 +64,13 @@
           Inicio
         </div>
         </ons-list-item>
-
-        <ons-list-item onclick="fn.load('menuhistoria.html')" tappable>
-          <div class="left">
-          <i class="small material-icons">book</i>
-        </div>
-        <div class="center">
-          Historia
-        </div>
-        </ons-list-item>
         
-  <ons-list-item onclick="fn.load('atractivos.html')" tappable>
-          <div class="left">
-        <i class="fa fa-camera" aria-hidden="true"></i>
-        </div>
-        <div class="center">
-          Atractivos turisticos
-        </div>
-        </ons-list-item>
-
         <ons-list-item onclick="fn.load('restaurantes.html')" tappable>
           <div class="left">
          <i class="fa fa-cutlery" aria-hidden="true"></i>
         </div>
         <div class="center">
-          Restaurantes
+          ¿Que comer?
         </div>
         </ons-list-item>
     
@@ -71,6 +83,16 @@
         </div>
         </ons-list-item>
         
+    
+    <ons-list-item onclick="fn.load('atractivos.html')" tappable>
+          <div class="left">
+        <i class="fa fa-camera" aria-hidden="true"></i>
+        </div>
+        <div class="center">
+          Atractivos turisticos
+        </div>
+        </ons-list-item>
+    
     <ons-list-item onclick="fn.load('como_llegar.html')" tappable>
           <div class="left">
          <i class="fa fa-map" aria-hidden="true"></i>
@@ -81,7 +103,7 @@
         </ons-list-item>
     <br>
     <br>
-    <img src="imagen/pueblo.PNG" alt="" width="100%"/> 
+    <img src="imagen/Lampazos_Seal.jpg" alt="" width="100%"/> 
     
       </ons-list>
     
@@ -103,10 +125,9 @@
       </div>
       
     </ons-toolbar>
-    <ons-card>
-    	<hr> 
-          <img src="imagen/lampazos1.jpg" alt="" width="100%"/>
-  <center><font size= 2 face="Helvetica, Sans-Serif">Actualmente Lampazos destaca por su atractivo turístico,<b> conócelo.</b></font> <br><br> <font style="color:#FFA500" size= 4 face="Helvetica, Sans-Serif" align="Right"><b>¿Qué puedes visitar?</b></font></center>
+    
+          <img src="imagen/9-Lampazoz-418x279.jpg" alt="" width="100%"/>
+  <center><font size= 2 face="Helvetica, Sans-Serif">Actualmente lampazos destaca por su atractivo turístico,<b>conócelo.</b></font> <br><br> <font style="color:#FFA500" size= 4 face="Helvetica, Sans-Serif" align="Right"><b>¿Qué puedes visitar?</b></font></center>
   
   <center><font size= 2 face="Helvetica, Sans-Serif">En todo México, hasta en el pueblo más pequeño encontramos historias y héroes, pero <b>Lampazos de Naranjo</b> es un municipio que ha sido real protagonista de la consolidación de nuestro país.</font></center>
   
@@ -116,26 +137,18 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="item active">
-       <a onclick="fn.load('ojoagua.html')"> <img src="imagen/ojo1.jpg" alt="Los Angeles" style="width:100%;"></a>
+       <a onclick="fn.load('ojoagua.html')"> <img src="imagen/lampazoz.jpg" alt="Los Angeles" style="width:100%;"></a>
         <div class="carousel-caption">
-          <h3><span>Ojo de agua de San Diego</span></h3>
+          <h3><span>Ojo de agua</span></h3>
         </div>
       </div>
 
       <div class="item">
-       <a onclick="fn.load('museo.html')"> <img src="imagen/mus1.PNG" alt="Chicago" style="width:100%;"></a>
+       <a onclick="fn.load('museo.html')"> <img src="imagen/Lampazos.png" alt="Chicago" style="width:100%;"></a>
      <div class="carousel-caption">
           <h3><span>Museo histórico</span></h3>
         </div>
       </div>
-
-	<div class="item">
-       <a onclick="fn.load('parqueacua.html')"> <img src="imagen/acua1.jpg" alt="Chicago" style="width:100%;"></a>
-     <div class="carousel-caption">
-          <h3><span>Parque acuático</span></h3>
-        </div>
-      </div>
-
     </div>
 
     <!-- Left and right controls -->
@@ -149,13 +162,34 @@
     </a>
   </div>
 </div>
- <br>
-        <center><font style="color:#FFA500" size= 4 face="Helvetica, Sans-Serif" align="Right"><b>Festivales</b></font></center>
-     <center><font size= 2 face="Helvetica, Sans-Serif">Aniversario de <b>Lampazos</b> 12 de noviembre. 
-     <br> Fiestas de San Juan Bautista 24 de junio. 
-     <br> Ferias del pueblo Segunda semana del mes de junio. </font></center>
-  <hr>
-  </ons-card>
+      <hr>
+<div class="container" id="form">
+  <center><font style="color:#FFA500" size= 4 face="Helvetica, Sans-Serif" align="Right"><b>¿Más información?</b></font></center>
+  <center><font size= 2 face="Helvetica, Sans-Serif">Si requieres de más información para conocer a fondo nuestro municipio, mándanos tus datos y nosotros nos pondremos en contacto contigo</font></center>
+  <br>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="name">Nombre:</label>
+    <input type="name" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="name">Teléfono:</label>
+    <input type="name" class="form-control" id="name">
+  </div>
+   <div class="form-group">
+    <label for="name">Correo:</label>
+    <input type="name" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="name">Asunto:</label>
+    <input type="name" class="form-control" id="name">
+  </div>
+  
+  <button type="submit" class="btn btn-default">Enviar</button>
+</form>
+</div>
+
+<hr>
   </ons-page>
 </template>
 
@@ -170,7 +204,7 @@
         </div>
     </ons-toolbar>
      <ons-card>
-    <img src="imagen/ojo2.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/4154802048_7e930ebf6f_b.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Ojo de agua
     </div>
@@ -180,29 +214,6 @@
   </ons-card>
 </ons-page>
     </template>
-
- <template id="parqueacua.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-back-button onclick="fn.load('home.html')">Inicio</ons-back-button>
-        </div>
-      <div class="center">
-        <font size= 4 face="Helvetica, Sans-Serif">Lampazos de Naranjo</font>
-        </div>
-    </ons-toolbar>
-     <ons-card>
-    <img src="imagen/acua2.jpg" alt="Onsen UI" style="width: 100%">
-    <div class="title">
-      Parque acuático
-    </div>
-    <div class="content">
-      <p>Modernas instalaciones acuáticas que conjugan naturaleza y diversión. Único en el norte del estado.</p>
-    </div>
-  </ons-card>
-</ons-page>
-    </template>
-
     
     <template id="como_llegar.html">
   <ons-page>
@@ -217,7 +228,7 @@
         </div>
     </ons-toolbar>
      <ons-card>
-    <img src="imagen/mapa.png" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/lampazos_como_llegar.PNG" alt="Onsen UI" style="width: 100%">
     <div class="title">
       <b>¿Como llegar?</b>
     </div>
@@ -230,7 +241,7 @@
 </ons-page>
     </template>
     
-   <template id="hoteles.html">
+    <template id="hoteles.html">
   <ons-page>
     <ons-toolbar>
        <div class="left">
@@ -243,32 +254,53 @@
         </div>
     </ons-toolbar>
      <ons-card>
+    <img src="imagen/result-no-thumbnail-2x.png" alt="Onsen UI" style="width: 100%">
     <div class="title">
       <b>Hotel Lampazos</b>
     </div>
     <div class="content">
       <p><b>Dirección: </b>Juan I. Ramón #11 Colonia Centro Lampazos de Naranjo, Nuevo León, México. C.P. 65350.</p>
-      <p><b>Telefono: </b>(873) 73-80-981</p>
+      <p><b>Telefono: </b>(873) 7380047</p>
+      <p><b>Categoria: </b>1 estrella</p>
+      <p><b>Zona: </b>Paseo Norte</p>
     </div>
   </ons-card>
    <ons-card>
+    <img src="imagen/RIecpHyToLdcTGZk7KEtw1VZgL3DEcv3KYod5zCHzJI.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       <b>Hotel Posada Lampazos</b>
     </div>
     <div class="content">
       <p><b>Dirección: </b>Carretera Monterrey-Colombia y Camino a Ojo de Agua de San Diego Colonia Centro Lampazos de Naranjo, Nuevo León, México. C.P. 65070</p>
-      <p><b>Telefono: </b>(873) 73-80-047</p>
+      <p><b>Telefono: </b>(873) 7380981</p>
+      <p><b>Página web: </b>https://www.facebook.com/pages/Hotel-y-Restaurant-Posada-Lampazos/278130202207918</p>
+      <p><b>Categoria: </b>1 estrella</p>
+      <p><b>Zona: </b>Paseo Norte</p>
       </div>
    </ons-card>
    <ons-card>
+    <img src="imagen/20161231_122955.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       <b>Hotel San Jose</b>
     </div>
     <div class="content">
       <p><b>Dirección: </b>Nemesio García Naranjo #1 Colonia Centro Lampazos de Naranjo, Nuevo Leon, México. C.P. 65070</p>
-      <p><b>Telefono: </b>(873) 73-80-616</p>
+      <p><b>Telefono: </b>(873) 7380616</p>
+      <p><b>Zona: </b>Paseo Norte</p>
       </div>
    </ons-card>
+   <ons-card>
+    <img src="imagen/result-no-thumbnail-2x.png" alt="Onsen UI" style="width: 100%">
+    <div class="title">
+      <b>Bella Vista</b>
+    </div>
+    <div class="content">
+      <p><b>Dirección: </b>Hidalgo 1, Centro de Lampazos de Naranjo, 16800 El Naranjo, N.L</p>
+      <p><b>Telefono: </b> 01 482 100 0810</p>
+      </div>
+   </ons-card>
+   
+  
 </ons-page>
     </template>
     
@@ -284,7 +316,7 @@
         </div>
     </ons-toolbar>
      <ons-card>
-    <img src="imagen/mus2.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/1224307416851_f%20(1).jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Museo de historia
     </div>
@@ -300,24 +332,16 @@
   <ons-page>
     <ons-toolbar>
       <div class="left">
-        <ons-back-button onclick="fn.load('home.html')">Inicio</ons-back-button>
-        </div>
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
       <div class="center">
         <font size= 4 face="Helvetica, Sans-Serif">Lampazos de Naranjo</font>
         </div>
     </ons-toolbar>
-    
-         <ons-card>
-    <div class="title">
-      Restaurante Posada Lampazos
-    </div>
-    <div class="content">
-      <p>(873)73-80-981</p>
-    </div>
-  </ons-card>
-    
      <ons-card>
-    <img src="imagen/fritada.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/cabrito_fritada.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Fritada de cabrito
     </div>
@@ -327,7 +351,7 @@
   </ons-card>
   
   <ons-card>
-    <img src=imagen/cortadillo.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/cortadilloderes.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Cortadillo
     </div>
@@ -336,17 +360,8 @@
     </div>
   </ons-card>
   
-           <ons-card>
-    <div class="title">
-      Restaurante Plaza
-    </div>
-    <div class="content">
-      <p>(873)73-80-981</p>
-    </div>
-  </ons-card>
-  
   <ons-card>
-    <img src="imagen/capirotada.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/capirotada-Mexican.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Capirotada
     </div>
@@ -356,7 +371,7 @@
   </ons-card>
   
   <ons-card>
-    <img src="imagen/hojarascas.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/galletas-hojarascas.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Hojarascas
     </div>
@@ -365,42 +380,20 @@
     </div>
   </ons-card>
   
-          <ons-card>
+  <ons-card>
+    <img src="imagen/tortillasdeharina.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
-      Restaurante Sánchez
+      Tortillas
     </div>
     <div class="content">
-      <p>(873)73-80-183 </p>
+      <p>Con tan solo harina, sal, manteca y otros ingredientes hacemos las torillas más deliciosas.</p>
     </div>
   </ons-card>
   
 </ons-page>
     </template>
 
-<template id="menuhistoria.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-back-button onclick="fn.load('home.html')">Inicio</ons-back-button>
-        </div>
-      <div class="center">
-        <font size= 4 face="Helvetica, Sans-Serif">Lampazos de Naranjo</font>
-        </div>
-    </ons-toolbar>
-     <ons-card>
-    <img src="imagen/historia.jpg" alt="Onsen UI" style="width: 100%">
-    <div class="title">
-      Nuestra historia
-    </div>
-    <div class="content">
-      <p><b> Lampazos </b> se fundó en 1698 y es un municipio que se destaca por su hermosa arquitectura de influencias francesas e italianas, sorprendiendo especialmente la belleza exhibida en la Misión de Nuestra Señora de los Dolores. <br> <br>  
- Este lugar es conocido por ser Tierra de Generales, hombres valientes nacidos en este lugar que se ganaron a pulso un lugar en la historia por sus heroicas acciones. <br> <br>   Personajes como el Gral. Francisco Naranjo (Héroe de la intervención francesa y la Guerra de la Reforma), Juan I. Ramón (Héroe de la Independencia) y Santiago Vidaurri (Gobernador del Estado entre 1855 y 1894, quien luchó contra la Intervención Francesa) que son orgullo de Lampazos y ejemplo para todos los Neoloneses. 
-<br> <br> En <b> Lampazos </b> se puede degustar pan de maíz, tortilla de harina, menudo, barbacoa. Otros platillos típicos son: cabritada, quesos de cabra, hojarascas y pan dulce.
-</p>
-    </div>
-  </ons-card>
-</ons-page>
-    </template>
+
 
 
     <template id="atractivos.html">
@@ -415,53 +408,43 @@
         <font size= 4 face="Helvetica, Sans-Serif">Lampazos de Naranjo</font>
         </div>
     </ons-toolbar>
+     <ons-card>
+    <img src="imagen/11182400.jpg" alt="Onsen UI" style="width: 100%">
+    <div class="title">
+      Presidencia municipal
+    </div>
+    <div class="content">
+      <p>Contemplarás frutos de la actividad que dio prosperidad a este nuevo pueblo.</p>
+    </div>
+  </ons-card>
+  
   <ons-card>
-    <img src="imagen/casacultura.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/30015.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
       Casa de la cultura
     </div>
     <div class="content">
-      <p>Construcción que data del siglo XIX y principios del siglo XX aquí se imparten diversos cursos de arte entre otros.</p>
+      <p>La minería, época que atrajo a infinidad de obreros, extranjeros e inversionistas a estas tierras.</p>
     </div>
   </ons-card>
   
   <ons-card>
-    <img src="imagen/teatro.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/30869.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
-      Teatro Epigmenio Ayarzagoitia
+      Teatro Ayarzagoitia
     </div>
     <div class="content">
-      <p>Construido en 18992 y reconstruido en 2003, ha sido escenario de artistas nacionales y extranjeros.</p>
+      <p>Edificio público en el cuál podemos ver frutos de la historia de Lampazos.</p>
     </div>
   </ons-card>
   
   <ons-card>
-    <img src="imagen/juarez.jpg" alt="Onsen UI" style="width: 100%">
+    <img src="imagen/MX12182467048027.jpg" alt="Onsen UI" style="width: 100%">
     <div class="title">
-      Plaza Juárez
+      Plaza del tricentenario
     </div>
     <div class="content">
-      <p>Hermosa plaza al centro del municipio, con un hermoso kiosco que es testigo de innumerables eventos cívicos y sociales. <br> En una misma plaza existe un monumento dedicado al Benemérito de las Américas Don Benito Juárez, que con motivo del centenario se edificó en 1906.</p>
-    </div>
-  </ons-card>
-  
-  <ons-card>
-    <img src="imagen/alameda.jpg" alt="Onsen UI" style="width: 100%">
-    <div class="title">
-      Alameda Cuauhtémoc
-    </div>
-    <div class="content">
-      <p> <br> Tranquila y arbolada plaza con un kiosco central y el monumento a la madre, delimitado a un costado por una acequia que atraviesa gran parte de la ciudad. </p>
-    </div>
-  </ons-card>
-  
-  <ons-card>
-    <img src="imagen/españa.jpg" alt="Onsen UI" style="width: 100%">
-    <div class="title">
-      Plaza España 
-    </div>
-    <div class="content">
-      <p>De gran Belleza y tranquilidad, aquí encontraras una peculiar escultura de Don Quijote de la Mancha y su fiel escudero Sancho Panza.</p>
+      <p>Se levanta un enorme monumento que conmemora los trescientos años de la fundación del municipio.</p>
     </div>
   </ons-card>
   
