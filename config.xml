@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Lampazos de naranjo</name>
+    <name>Lampazos de Naranjo</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+       Todos los derechos reservados 2017 
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="marcos.lopezcuadros@hotmail.com" href="">
+        TeamDeveloper
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -34,6 +34,7 @@
         <icon density="xxxhdpi" src="platforms/browser/res/icon/android/icon_lampazos.png" />
     </platform>
     <platform name="ios">
+          <icon density="xxxhdpi" src="platforms/browser/res/icon/android/icon_lampazos.png" />
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="www/res/icon/ios/icon-40.png" width="40" />
